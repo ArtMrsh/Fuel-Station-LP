@@ -1,0 +1,11 @@
+@font-face {
+	font-family: 'LCD2';
+	src: url('LCD2Bold.eot');
+	src: url('LCD2Bold.eot?#iefix') format('embedded-opentype'),
+		url('LCD2Bold.woff2') format('woff2'),
+		url('LCD2Bold.woff') format('woff'),
+		url('LCD2Bold.ttf') format('truetype'),
+		url('LCD2Bold.svg#LCD2Bold') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}

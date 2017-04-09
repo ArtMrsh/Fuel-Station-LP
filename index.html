@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/media.css">
+   <link rel="stylesheet" href="fonts/font.css">
+   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700i,900" rel="stylesheet">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body onload="digitalWatch()">
+
+   <div class="wrapper">
+      <header>
+         <div class="header__main">
+            <div class="logo-wrap"><div class="logo"><a href="#"><img src="img/logo.png" alt="logo"></a></div></div>
+            <div class="header__block">
+               <div class="header__slogan">Длинные литры — лучшее качество</div>
+               <div class="header__maplink"><a href="#map">Карта сети АЗС</a></div>
+            </div>
+
+            <div class="header__navigation">
+               <nav>
+                  <div class="handle">menu</div>
+                  <ul class="menu">
+                     <li class="menu__left-col"><a href="#">Главная</a></li>
+                     <li class="menu__middle-col"><a href="#">Топливо <span class="menu__span-red">Upgrade</span></a></li>
+                     <li><a href="#">Новости</a></li>
+                     <li class="menu__left-col"><a href="#">Компания</a></li>
+                     <li class="menu__middle-col"><a href="#">Услуги АЗС</a></li>
+                     <li class="menu__right-col-middle"><a href="#">Контакты</a></li>
+                     <li class="menu__left-col"><a href="#">Сеть АЗС</a></li>
+                     <li><a href="#">Система скидок</a></li>
+                     <li class="menu__right-col-bottom"><a href="#">Личный кабинет</a></li>
+                  </ul>
+               </nav>
+            </div>
+
+            <div class="header__contacts">
+               <div class="adress"><span>г. Кострома, ул. Магистральная, 8.</span></div>
+               <div class="tel"><span>(4942) 33-33-61</span></div>
+               <div class="mail"><a href="mailto:ktk@oooktk.ru">ktk@oooktk.ru</a></div>
+            </div>
+
+         </div>
+
+         <div class="header__content">
+            <div class="header__content-inner">
+
+               <div class="gas-station">
+                  <div class="time"><p id="digital_watch"></p></div>
+                  <div class="item">
+                     <div class="item__name fix__item"><p>супер<br/><span>98</span></p></div>
+                     <div class="item__price clearfix"><div class="item__price__inner">41.00</div></div>
+                  </div>
+                  <div class="item">
+                     <div class="item__name fix__item"><p>премиум<br/><span>95</span></p></div>
+                     <div class="up"></div>
+                     <div class="item__price clearfix"><div class="item__price__inner">36.80</div></div>
+                  </div>
+                  <div class="item">
+                     <div class="item__name fix__item"><p>регуляр<br/><span>92</span></p></div>
+                     <div class="up"></div>
+                     <div class="item__price clearfix"><div class="item__price__inner">34.10</div></div>
+                  </div>
+                  <div class="item">
+                     <div class="item__name"><p>евро-5<br/><span>дт</span></p></div>
+                     <div class="item__price clearfix"><div class="item__price__inner">36.50</div></div>
+                  </div>
+                  <div class="item">
+                     <div class="item__name"><p>евро-5<br/><span>дт</span></p></div>
+                     <div class="up"></div>
+                     <div class="item__price clearfix"><div class="item__price__inner">34.80</div></div>
+                  </div>
+               </div>
+
+               <div class="description">
+                  <h1>Сеть АЗС КТК</h1>
+                  <p>Значимость этих проблем настолько очевидна, что сложившаяся структура организации играет важную роль в формировании модели развития.
+С другой стороны постоянный</p>
+               </div>
+
+            </div>
+         </div>
+
+      </header>
+
+      <div class="content">
+         <div class="content__inner">
+            <h1 class="advantages__header">Преимущества топлива</h1>
+            <div class="advantages">
+               <div class="advantage__item fuel-economy"><p>Экономия топлива</p></div>
+               <div class="advantage__item automotive"><p>Снижение износа</p></div>
+               <div class="advantage__item power"><p>Увеличение мощности двигателя</p></div>
+               <div class="advantage__item nature"><p>Уменьшение токсичности</p></div>
+            </div>
+         </div>
+
+         <div class="calc">
+            <table class="calc__table-left">
+               <tbody>
+                  <tr class="table-head">
+                     <td class="fuel-type">Марка бензина</td>
+                     <td class="table-head">
+                        <div class="table-head__h"><h2>Калькулятор экономии</h2></div>
+                        <div class="discount">
+                           <input type="checkbox" id="discount">
+                           <label for="discount">У меня есть дисконтная карта</label>
+                        </div>
+                     </td>
+                  </tr>
+
+                  <tr>
+                     <td class="fuel__name">Регуляр<br/><span>92</span></td>
+                     <td class="calc__slide-first">
+                        <input type="range" min="1" max="100" step="1" value="40" class="range-slider" id="r1" oninput="rangeMove()">
+                     </td>
+                  </tr>
+
+                  <tr>
+                     <td class="fuel__name">Евро-5<br/><span>ДТ</span></td>
+                     <td class="calc__slide-second">
+                        <input type="range" min="1" max="100" step="1" value="5" class="range-slider" id="r2" oninput="rangeMoveSecond()">
+                     </td>
+                  </tr>
+
+                  <tr>
+                     <td class="fuel__name">Премиум<br/><span>95</span></td>
+                     <td class="calc__slide-third">
+                        <input type="range" min="1" max="100" step="1" value="15" class="range-slider" id="r3" oninput="rangeMoveThird()">
+                     </td>
+                  </tr>
+
+               </tbody>
+
+            </table>
+            <table class="calc__table-right">
+               <tbody>
+                  <tr class="calc__table-right__top">
+                     <td>Кол-во<br/>литров</td>
+                     <td>Отпускная<br/>стоимость</td>
+                     <td>Фактическая<br/>стоимость</td>
+                  </tr>
+                  <tr>
+                     <td class="calc__table-right__val"><span class="firstval">40</span></td>
+                     <td class="calc__table-right__val"><span class="firstRes">36.80</span></td>
+                     <td class="calc__table-right__val"><span class="firstResDis">36.21</span></td>
+                  </tr>
+                  <tr>
+                     <td class="calc__table-right__val"><span class="secondval">5</span></td>
+                     <td class="calc__table-right__val"><span class="secondRes">34.10</span></td>
+                     <td class="calc__table-right__val"><span class="secondResDis">35.36</span></td>
+                  </tr>
+                  <tr>
+                     <td class="calc__table-right__val"><span class="thirdval">15</span></td>
+                     <td class="calc__table-right__val"><span class="thirdRes">34.80</span></td>
+                     <td class="calc__table-right__val"><span class="thirdResDis">34.80</span></td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+
+      </div>
+      <div class="advantages-switcher__wrap">
+         <div class="advantages-switcher">
+            <div class="advantages-switcher__block-name left-switcher active">Для всех видов бензина</div>
+            <div class="advantages-switcher__block-name advantages-switcher__block-name-bordered middle-switcher">Для дизельного топлива</div>
+            <div class="advantages-switcher__block-name right-switcher">Для пропан-бутановой смеси</div>
+
+            <div class="switch__content switch__content-left">
+
+               <div class="switch__content__item switch__content-left__item-first"><p>Увеличение крутящего момента</p></div>
+               <div class="switch__content__item switch__content-left__item-second"><p>Уменьшение удельного расхода бензина</p></div>
+               <div class="switch__content__item switch__content-left__item-third"><p>Уменьшение концентрации вредных
+веществ в выхлопных газах</p></div>
+               <div class="switch__content__item switch__content-left__item-fourth"><p>Стабилизация оборотов
+двигателя на холостом ходу</p></div>
+
+               <div class="tip" align="right">
+                  <div class="triangle"></div>
+                  <p>По результатам испытаний установлено, что введение предоставленных топливных модификаторов в топливо для ДВС оказывают влияние на мощностные, экономические и экологические показатели двигателя в сторону их улучшения.</p>
+               </div>
+
+            </div>
+
+            <div class="switch__content switch__content-middle">
+
+               <div class="switch__content__item switch__content-left__item-third"><p>Уменьшение концентрации вредных
+веществ в выхлопных газах</p></div>
+               <div class="switch__content__item switch__content-left__item-fourth"><p>Стабилизация оборотов
+двигателя на холостом ходу</p></div>
+               <div class="switch__content__item switch__content-left__item-first"><p>Увеличение крутящего момента</p></div>
+               <div class="switch__content__item switch__content-left__item-second"><p>Уменьшение удельного расхода бензина</p></div>
+               <div class="tip" align="right">
+                  <div class="triangle"></div>
+                  <p>По результатам испытаний установлено, что введение предоставленных топливных модификаторов в топливо для ДВС оказывают влияние на мощностные, экономические и экологические показатели двигателя в сторону их улучшения.</p>
+               </div>
+
+            </div>
+
+            <div class="switch__content switch__content-right">
+
+               <div class="switch__content__item switch__content-left__item-second"><p>Уменьшение удельного расхода бензина</p></div>
+               <div class="switch__content__item switch__content-left__item-third"><p>Уменьшение концентрации вредных
+веществ в выхлопных газах</p></div>
+               <div class="switch__content__item switch__content-left__item-fourth"><p>Стабилизация оборотов
+двигателя на холостом ходу</p></div>
+               <div class="switch__content__item switch__content-left__item-first"><p>Увеличение крутящего момента</p></div>
+
+               <div class="tip" align="right">
+                  <div class="triangle"></div>
+                  <p>По результатам испытаний установлено, что введение предоставленных топливных модификаторов в топливо для ДВС оказывают влияние на мощностные, экономические и экологические показатели двигателя в сторону их улучшения.</p>
+               </div>
+
+            </div>
+         </div>
+      </div>
+
+      <div class="card-advantages__wrap">
+         <div class="card-advantages">
+            <div class="right-block">
+               <h1>Преимущество топливных и дисконтных карт</h1>
+               <p>Пластиковая карта, используемая для автоматизации и оплаты заправки на АЗС. Чаще всего представляет собой чиповую карту, содержащую электронный микрочип.</p>
+               <div class="services">
+                  <div class="services__item services__item-left">Аналог электронного <br/> кошелька</div>
+                  <div class="services__item services__item-middle">Установка лимита <br/> на заправку</div>
+                  <div class="services__item services__item-right">Действует на заправках Российского топливного союза </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="news-wrap">
+         <div class="news clearfix">
+            <div class="news__title">
+               <h3>Новости</h3>
+               <a href="#">Читать все новости</a>
+            </div>
+            <div class="news__content">
+               <div class="news__content_item">
+                  <a href="#"><img src="img/Layer12.jpg" alt="image"></a><br/>
+                  <span class="time">14 марта, 12:36</span><br/>
+                  <a href="#" class="news__link">Бензин 95 или 92 - сравнение цены и качества</a>
+               </div>
+               <div class="news__content_item">
+                  <a href="#"><img src="img/Layer11.jpg" alt="image"></a><br/>
+                  <span class="time">14 марта, 12:36</span><br/>
+                  <a href="#" class="news__link">Купить колеса и диски на авто</a>
+               </div>
+               <div class="news__content_item">
+                  <a href="#"><img src="img/Layer13.jpg" alt="image"></a><br/>
+                  <span class="time">14 марта, 12:36</span><br/>
+                  <a href="#" class="news__link">Переход на зимнее дизельное топливо: надо знать!</a>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="yandex-map-wrap"  id="map">
+         <div class="map-title">
+            <h2>КАРТА СЕТИ АЗС</h2>
+         </div>
+         <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A57251bef0fba3ec6a59ba93227f0afcc2cad55d52f0d577f044bf0360cc011dd&amp;width=100%25&amp;height=600&amp;lang=ru_UA&amp;scroll=false"></script>
+      </div>
+
+      <footer>
+         <div class="header__main">
+            <div class="logo-wrap"><div class="logo"><a href="#"><img src="img/logo.png" alt="logo"></a></div></div>
+
+            <div class="header__navigation">
+               <nav>
+                  <ul class="menu">
+                     <li class="menu__left-col"><a href="#">Главная</a></li>
+                     <li class="menu__middle-col"><a href="#">Топливо <span class="menu__span-red">Upgrade</span></a></li>
+                     <li><a href="#">Новости</a></li>
+                     <li class="menu__left-col"><a href="#">Компания</a></li>
+                     <li class="menu__middle-col"><a href="#">Услуги АЗС</a></li>
+                     <li class="menu__right-col-middle"><a href="#">Контакты</a></li>
+                     <li class="menu__left-col"><a href="#">Сеть АЗС</a></li>
+                     <li><a href="#">Система скидок</a></li>
+                     <li class="menu__right-col-bottom"><a href="#">Личный кабинет</a></li>
+                  </ul>
+               </nav>
+            </div>
+
+            <div class="header__contacts">
+               <div class="adress"><span>г. Кострома, ул. Магистральная, 8.</span></div>
+               <div class="tel"><span>(4942) 33-33-61</span></div>
+               <div class="mail"><a href="mailto:ktk@oooktk.ru">ktk@oooktk.ru</a></div>
+            </div>
+            <div class="socials">
+               <a href="#" class"vk"><img src="img/vk.png" alt="vk"></a>
+               <a href="#" class"fb"><img src="img/f.png" alt="fb"></a>
+               <a href="#" class"insta"><img src="img/insta.png" alt="insta"></a>
+               <a href="#" class"ok"><img src="img/ok.png" alt="ok"></a>
+            </div>
+            <div class="author"><img src="img/author.png" alt="aut"></div>
+         </div>
+      </footer>
+   </div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
